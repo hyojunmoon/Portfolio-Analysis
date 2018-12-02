@@ -1,0 +1,58 @@
+Metadata-Version: 1.1
+Name: PortfolioAnalysis
+Version: 1.0
+Summary: Manage configuration files
+Home-page: http://qraftec.com
+Author: hyojun.moon
+Author-email: hyojun.moon@qraftec.com
+License: MIT
+Description: # Portfoilo Analyzer
+        
+        The **Portfoilo Analyzer** is basic portfolio analyzing tool with **visualization** supporting both *cumulative return data* and *return data*
+        
+        Supported Analysis
+        
+        - CAGR
+        - Sharpe Ratio
+        - Sortino Ratio
+        - MDD
+        - Average Drawdown
+        
+        Visualization
+        
+        - Cumulative Return
+        - Log-scale Cumulative Return
+        - Drawdown
+        - Analysis data table
+        
+        ## Install
+        ```Shell
+            pip install PortfolioAnalysis
+        ```
+        or
+        
+        ```Shell
+            python setup.py install
+        ```
+        
+        ## How to use
+        ```Python
+            #import
+            from PortfolioAnalysis import PortfolioAnalysis
+        
+            #read csv to get dataframe
+            returns = pd.read_csv(r'C:\Users\QRAFT1\Desktop\data\ks_etf\returns.csv', index_col=['Date'])
+        
+            #Analyze data during initialization
+            analysis = PortfolioAnalysis(returns, cumulative=Tru, auto_drop=True, window='M')
+        
+            #Visualization (http)
+            analysis.report()
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
